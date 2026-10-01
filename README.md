@@ -57,8 +57,7 @@ sudo python3 peripheral/ble_peripheral.py
 ```
 
 Scan with the Electron app, select "TestDevice", and enter the passkey from
-the Pi's log when the pairing dialog appears. To re-test pairing, remove the
-bond on the Pi first: `bluetoothctl remove <central-mac>`.
+the Pi's log when the pairing dialog appears. To re-test pairing, just restart the script, bond information is deleted automatically in the beginning.
 
 ## How to reproduce the pairing issue
 

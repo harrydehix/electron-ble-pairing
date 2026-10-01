@@ -1,0 +1,79 @@
+/**
+ * Global styles: a small set of design tokens (CSS custom properties) plus
+ * base element and shared button styles. Components style themselves with
+ * scoped CSS using these tokens.
+ */
+
+:root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --surface-alt: #eef0f3;
+    --border: #d9dde3;
+    --text: #1c1f23;
+    --text-muted: #6b7280;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #15171a;
+        --surface: #1e2126;
+        --surface-alt: #272b31;
+        --border: #353a41;
+        --text: #e8eaed;
+        --text-muted: #9aa1ab;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Shared button styles (used by App and PairingDialog). */
+.btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: inherit;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.15s,
+        border-color 0.15s;
+}
+
+.btn:hover {
+    background: var(--surface-alt);
+}
+
+.btn-primary {
+    border-color: transparent;
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
